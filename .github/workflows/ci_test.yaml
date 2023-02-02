@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: echo event
         run: |
-          echo ${{ vars.GITHUB_EVENT_NAME }}
+          echo "${{ vars.GITHUB_EVENT_NAME }}"

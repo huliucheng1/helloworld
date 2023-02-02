@@ -13,6 +13,7 @@ jobs:
 
     steps:
       - name: echo event
+        environment: ${{ vars.ENVIRONMENT_STAGE }}
         run: |
           echo "${{ vars.GITHUB_EVENT_NAME }}"
           echo ${{ github.repository }}

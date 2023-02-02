@@ -1,0 +1,17 @@
+name: CI tests
+
+on:
+  push:
+    branches: ["main", "test"]
+
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  CI-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: echo event
+        run: |
+          echo ${{ vars.GITHUB_EVENT_NAME }}

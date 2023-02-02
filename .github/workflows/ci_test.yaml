@@ -10,10 +10,9 @@ on:
 jobs:
   CI-tests:
     runs-on: ubuntu-latest
-    environment: ${{ vars.ENVIRONMENT_STAGE }}
 
     steps:
       - name: echo event
         run: |
-          echo "${{ vars.GITHUB_EVENT_NAME }}"
+          echo "${{ github.event_name }}"
           echo ${{ github.repository }}

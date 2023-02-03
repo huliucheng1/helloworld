@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - name: echo event
-        run: |
-          echo "${{ github.event_name }}"
-          echo ${{ github.repository }}
+        if: ${{ github.event_name == 'push' }}
+        run: echo this is a push event
+
+      - name: another echo event
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo this is a pull_request event
